@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Chisa Sushi</title>
+	<link rel="stylesheet" href="C:/web design/Chisa Sushi/css/bootstrap.css">
+	<link rel="stylesheet" href="C:/web design/Chisa Sushi/css/styles.css">
+	<link rel="stylesheet" href="C:/web design/Chisa Sushi/css/navbar.css">
+	<link rel="stylesheet" href="C:/web design/Chisa Sushi/css/carousel.css">
+	<link rel="stylesheet" href="C:/web design/Chisa Sushi/css/social.css">
+	<!--icons-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-inverse navbar-fixed-top active" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-nc">
+					<span class="sr-only">Desplegar / Ocultar</span>
+					<i class="fa fa-barras fa-4x" aria-hidden = "true" style="opacity: 1;"></i>
+				</button>
+				<a href="C:/web design/Chisa Sushi/index.html"><img src="C:/web design/Chisa Sushi/images/chisa-sushi-logo.jpg" alt="chisa_sushi" class="navbar-brand"></a>
+			</div>
+			<!-- Inicia Menu -->
+			<div class="collapse navbar-collapse" id="navegacion-nc">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a id="boton-menu" href="" class="dropdown-toggle" data-toggle="dropdown" role="button">
+							<h1>Menú<span class="fa fa-boton-menu" aria-hidden = "true" style="color: var(--naranja-main); opacity: 1;"></span></h1>
+						</a>
+						<ul class="dropdown-menu dropdown" role="menu">
+							<li>
+								<div class="contenedor-desp">
+									<div class="row">
+										<ul class="list-unstyled col-xs-6 col-md-6">
+											<li><a href="C:/web design/Chisa Sushi/menu/rolls.html"><h4>Rolls</h3></a></li><li class="divider"></li>
+											<li><a href="C:/web design/Chisa Sushi/menu/niguiri.html"><h4>Niguiri</h3></a></li><li class="divider"></li>
+											<li><a href="C:/web design/Chisa Sushi/menu/wok.html"><h4>Wok</h3></a></li><li class="divider"></li>
+											<li><a href="C:/web design/Chisa Sushi/menu/finger-food.html"><h4>Finger Food</h3></a></li><li class="divider"></li>
+											<li><a href="C:/web design/Chisa Sushi/menu/menu.html"><h4>Menu Completo</h3></a></li>
+										</ul>
+										<ul class="list-unstyled col-xs-6 col-md-6">
+											<li><a href="C:/web design/Chisa Sushi/menu/temaki.html"><h4>Temaki</h4></a></li><li class="divider"></li>
+											<li><a href="C:/web design/Chisa Sushi/menu/sashimi.html"><h4>Sashimi</h4></a></li><li class="divider"></li>
+											<li><a href="C:/web design/Chisa Sushi/menu/chow-fan.html"><h4>Chow Fan</h4></a></li><li class="divider"></li>
+											<li><a href="C:/web design/Chisa Sushi/menu/postres.html"><h4>Postres</h4></a></li><li class="divider"></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li><a href="#"><h1>Combos</h1></a></li>
+					<li><a href="C:/web design/Chisa Sushi/contacto/contacto.html"><h1>Contacto</h1></a></li>
+					<li><a href="#"><h1>catering</h1></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	</header>
+
+<footer></footer>
+
+<script>
+	document.getElementById("boton-menu").addEventListener("load", menu());
+	function menu() {
+		if (window.matchMedia("(min-width: 768px)").matches) {
+			document.getElementById("boton-menu").removeAttribute("data-toggle");
+			document.getElementById("boton-menu").setAttribute("href", "C:/web design/Chisa Sushi/menu/menu.html");
+		}
+	}
+</script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
+
+
+<!-- -->
+<h2 id="1" data-info="1">primero</h2>
+<h2 id="2" data-info="2">segundo</h2>
+<footer></footer>
+
+<script>
+var otro = document.getElementById('1');
+if (otro == null) {
+	console.log("ok!");
+} else {
+	console.log("algo fallo");
+}
+for (var i = 1; i < 3; i++) {
+	var elemento = document.getElementById(i);
+	elemento.addEventListener("click", cualCosa);
+}
+function cualCosa() {
+	var info = this.textContent;
+	console.log(info);
+}
+
+document.getElementById("boton-menu").addEventListener("load", menu());
+function menu() {
+	if (window.matchMedia("(min-width: 768px)").matches) {
+		document.getElementById("boton-menu").removeAttribute("data-toggle");
+		document.getElementById("boton-menu").setAttribute("href", "C:/web design/Chisa Sushi/menu/menu.html");
+	}
+}
+</script>
+
+
+<section id="placeHolder" class="hidden-xs col-sm-12">
+	<div id="descripcion" class="item-info">
+	<div class="wrapper">
+			<div class="container-fluid product-hero">
+				<div class="row content clearfix">
+					<a class="cerrar" onclick="exterminate()"><i class="fa fa-times-circle fa-4x" aria-hidden="true"></i></a>
+					<hgroup class="col-sm-6 text-left title-group"><h1 class="title">Extra Burger</h1><h2 class="subtitle"></h2></hgroup>
+					<div class="image col-sm-6 text-right">
+						<img src="images/BK_Web_HAMBURGUESA-corregida_500X540px_0_0.png" alt="">
+					</div>
+					<div class="col-sm-6 description">
+						Simple, sencilla, con ingredientes clásicos y el toque inconfundible de la carne a la parrilla.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

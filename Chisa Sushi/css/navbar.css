@@ -1,0 +1,159 @@
+@charset "UTF-8";
+/* Paleta de colores */
+.navbar-inverse {
+		background-color: var(--naranja-main);
+		border-bottom: 15px solid;
+		border-color: var(--naranja-main);
+}
+.navbar-brand {
+	width: 70px;
+	height:70px;
+	padding:0px;
+}
+
+.fa-barras {
+	float: right;
+	width: 48px;
+	height: 56px;
+	margin-right: 30px;
+	content: "\f0c9";
+}
+.collapsed > .fa-barras::after {
+	content: "\f0c9";
+}
+.fa-barras::after {
+	content: "\f057";
+}
+
+.dropdown > #boton-menu > h1 > .fa-boton-menu  {
+	margin-right: 30px;
+	content: "\f055";
+}
+.dropdown > #boton-menu > h1 > .fa-boton-menu::after {
+	content: "\f055";
+}
+.open > #boton-menu > h1 > .fa-boton-menu::after {
+	content: "\f056";
+}
+#boton-menu > h1 {
+		padding-left: 50px;
+}
+
+.navbar-nav {
+	margin: 0px -15px;
+}
+.navbar-inverse .navbar-toggle {
+	border-color: var(--naranja-main);
+	padding: 0px;
+	margin: 0px;
+}
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+	background-color: var(--naranja-main);
+}
+.navbar-inverse .navbar-nav > li > a {
+	padding-top: 10px;
+}
+.navbar-inverse .navbar-nav > li > a > h1{
+  font-size: 10vw;
+  font-weight: 900;
+	color: var(--naranja-main);
+}
+.navbar-inverse .navbar-collapse {
+	border-color: var(--blanco);
+	background-color: var(--blanco);
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+	color: var(--naranja-main);
+	background-color: transparent;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+	background-color: transparent;
+	color: var(--naranja-highlight);
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+	color: var(--naranja-main);
+	background-color: transparent;
+}
+.nav > li {
+	border-bottom: 2px solid var(--naranja-highlight);
+}
+.contenedor-desp {
+	padding: 0px 15px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+.contenedor-desp > .row > .list-unstyled > li > a > h4 {
+	text-align: center;
+  font-size: 5vw;
+	padding: 5px 0px;
+	color: var(--negro);
+	font-weight: 800;
+}
+
+.navbar-inverse .navbar-nav > li > a > .active{
+	color: var(--naranja-highlight);
+}
+
+@media (min-width: 768px) {
+.fa-boton-menu {
+	display: none !important;
+}
+.navbar-inverse {
+	border-bottom: 0px solid;
+}
+.navbar-brand {
+	width: 80px;
+	height:80px;
+}
+.navbar-nav {
+	padding-left: 50px;
+	float: left;
+}
+.navbar-inverse .navbar-nav > li > a {
+	padding-top: 27px;
+}
+.navbar-inverse .navbar-nav > li > a > h1{
+	font-size: 24px;
+	color: var(--blanco);
+}
+#boton-menu > h1 {
+		padding-left: 0px;
+}
+.contenedor-desp > .row > .list-unstyled > li > a > h4 {
+  font-size: 20px;
+}
+
+.navbar-inverse .navbar-nav > li > a > h1:hover, .navbar-inverse .navbar-nav > li > a > h1:focus {
+	color: var(--naranja-highlight);
+}
+.navbar-inverse .navbar-collapse {
+	border-color: var(--naranja-main);
+	background-color: var(--naranja-main);
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+	color: var(--naranja-highlight);
+	background-color: transparent;
+}
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+	color: var(--naranja-highlight);
+	background-color: transparent;
+}
+.nav > li {
+	border-bottom: 0px;
+}
+.contenedor-desp {
+	width: 400px;
+}
+}
+
+@media (min-width: 1024px) {
+	.navbar-inverse .navbar-nav > li > a > h1{
+		font-size: 35px;
+	}
+}
+@media (min-width: 1200px) {
+	.navbar-inverse .navbar-nav > li > a > h1{
+		font-size: 45px;
+	}
+}

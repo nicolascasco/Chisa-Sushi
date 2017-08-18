@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Chisa Sushi</title>
+	<link rel="stylesheet" href="C:/web design/Chisa Sushi/css/bootstrap.css">
+	<link rel="stylesheet" href="C:/web design/Chisa Sushi/css/styles.css">
+	<link rel="stylesheet" href="C:/web design/Chisa Sushi/css/navbar.css">
+	<link rel="stylesheet" href="./css/contacto.css">
+	<!--icons-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body onload="carga();">
+	<header>
+		<nav class="navbar navbar-inverse navbar-fixed-top active" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-nc">
+					<span class="sr-only">Desplegar / Ocultar</span>
+					<i class="fa fa-barras fa-4x" aria-hidden = "true" style="opacity: 1;"></i>
+				</button>
+				<a href="C:/web design/Chisa Sushi/index.html"><img src="C:/web design/Chisa Sushi/images/chisa-sushi-logo.jpg" alt="chisa_sushi" class="navbar-brand"></a>
+			</div>
+			<!-- Inicia Menu -->
+			<div class="collapse navbar-collapse" id="navegacion-nc">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a id="boton-menu" class="dropdown-toggle" data-toggle="dropdown" role="button">
+							<h1>Menú<span class="fa fa-boton-menu" aria-hidden = "true" style="color: var(--naranja-main); opacity: 1;"></span></h1>
+						</a>
+						<ul class="dropdown-menu dropdown" role="menu">
+							<li>
+								<div class="contenedor-desp">
+									<div class="row">
+										<ul class="list-unstyled col-xs-6 col-md-6">
+											<li><a href="#"><h4>Rolls</h3></a></li><li class="divider"></li>
+											<li><a href="#"><h4>Niguiri</h3></a></li><li class="divider"></li>
+											<li><a href="#"><h4>Wok</h3></a></li><li class="divider"></li>
+											<li><a href="#"><h4>Finger Food</h3></a></li><li class="divider"></li>
+											<li><a href="C:/web design/Chisa Sushi/menu/menu.html"><h4>Menu Completo</h3></a></li>
+										</ul>
+										<ul class="list-unstyled col-xs-6 col-md-6">
+											<li><a href="#"><h4>Temaki</h4></a></li><li class="divider"></li>
+											<li><a href="#"><h4>Sashimi</h4></a></li><li class="divider"></li>
+											<li><a href="#"><h4>Chow Fan</h4></a></li><li class="divider"></li>
+											<li><a href="#"><h4>Postres</h4></a></li><li class="divider"></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li><a href="#"><h1>Combos</h1></a></li>
+					<li><a href="contacto.html"><h1 class="active">Contacto</h1></a></li>
+					<li><a href="#"><h1>catering</h1></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	</header>
+	<div class="container contacto-container">
+		<div class="row">
+			<!-- Mapa Start-->
+			<div class="col-xs-12 col-sm-6 col-sm-push-6 map">
+				<iframe
+			  frameborder="0" style="border:0"
+			  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBviDmeYZw_F07oYooHZLfZ7qDDMuArWPg&q=place_id:ChIJBb1Tt2Jdt5URIMak_m7HEFo" allowfullscreen>
+				</iframe>
+			</div>
+			<!-- Info Start-->
+			<div class="col-xs-12 col-sm-6 col-sm-pull-6 col-md-5 info"><!--style="max-width:600px;"-->
+				<ul class="list-unstyled col-xs-12" style="text-align:center;"><!-- Location -->
+					<li class="col-xs-12"><i class="fa fa-map-marker fa-2x" aria-hidden="true" style="color:var(--naranja-highlight);"></i></li>
+					<li class="col-xs-12"><h1>Juan B. Justo 110</h1></li>
+					<li class="col-xs-12"><h2>San Nicolás de los Arroyos</h2></li>
+					<li class="col-xs-12"><a href="https://www.google.com.ar/maps/dir//chisa+sushi,+Juan+B.+Justo+110,+B2900DUD+San+Nicol%C3%A1s+de+Los+Arroyos,+Buenos+Aires/@-33.333615,-60.2122347,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x95b75d62b753bd05:0x5a10c76efea4c620!2m2!1d-60.210046!2d-33.333615" target="blank">
+						<h4 class="text-main">¿Como llegar?</h4></a></li>
+					<li class="col-xs-12 divisor"></li>
+				</ul>
+				<ul class="list-unstyled col-xs-12" style="text-align:center;">
+					<!--<li><i class="col-xs-12 fa fa-clock-o fa-1x" aria-hidden="true"></i><h3>Horarios</h3></li>-->
+					<div class="col-xs-6 collapsed" data-toggle="collapse" data-target="#horarios" style="cursor:pointer;"><h3 id="actual" class=" text-main"></h3></div>
+					<div id="ver" class="col-xs-6 horarios-toggle collapsed text-toggle-indicator text-main" onclick="verHorarios()" data-toggle="collapse" data-target="#horarios" style="cursor:pointer;">Mostrar horarios</div>
+
+					<div id="horarios" class="col-xs-12 collapse">
+						<ul class="list-unstyled col-xs-12 col-md-6">
+							<li><h3 style="text-transform: capitalize;">Abierto:</h3></li>
+							<li><h4	>Mie: 20:00 - 24:00</h4></li>
+							<li><h4>Jue: 20:00 - 24:00</h4></li>
+							<li><h4>Vie: 20:00 - 24:00</h4></li>
+							<li><h4>Sab: 20:00 - 24:00</h4></li>
+						</ul>
+						<ul class="list-unstyled col-xs-12 col-md-6">
+							<li><h3 style="text-transform: capitalize;">Pedidos:</h3></li>
+							<li><h4>Mie: 17:00 - 22:00</h4></li>
+							<li><h4>Jue: 17:00 - 22:00</h4></li>
+							<li><h4>Vie: 17:00 - 22:00</h4></li>
+							<li><h4>Sab: 17:00 - 22:00</h4></li>
+						</ul>
+					</div>
+					<li class="col-xs-12 divisor"></li>
+				</ul>
+				<ul class="list-unstyled col-xs-12">
+					<li class="col-xs-6" style="text-align:center;"><span class="fa fa-envelope fa-2x" aria-hidden="true" style="color:var(--naranja-highlight);"></span><h4>chisasushi@gmail.com</h4></li>
+					<li class="col-xs-6" style="text-align:center;"><span class="fa fa-phone fa-2x" aria-hidden="true" style="color:var(--naranja-highlight);"></span><h4>(0336) 4457223</h4></li>
+					<li class="col-xs-12 divisor"></li>
+				</ul>
+				<ul class="list-unstyled"><!-- Servicios -->
+					<li class="col-xs-12" style="padding:0px 15px;"><h3 style="float:left; text-transform:capitalize;">Servicios:</h3></li>
+					<li class="col-xs-5" style="padding:0px 0px 0px 30px;"><h4><span class="fa fa-address-book fa-1x" aria-hidden="true" style="font-size:17px; color:var(--naranja-highlight); padding-right:15px;"></span>Reservas</h4></li>
+					<li class="col-xs-7" style="padding:0px 0px 0px 30px;"><h4><span class="fa fa-phone fa-1x" aria-hidden="true" style="font-size:17px; color:var(--naranja-highlight); padding-right:15px;"></span>Pedidos por telefono</h4></li>
+					<li class="col-xs-5" style="padding:0px 0px 0px 30px;"><h4><span class="fa fa-motorcycle fa-1x" aria-hidden="true" style="font-size:17px; color:var(--naranja-highlight); padding-right:15px;"></span>Delivery</h4></li>
+					<li class="col-xs-7" style="padding:0px 0px 0px 30px;"><h4><span class="fa fa-wifi fa-1x" aria-hidden="true" style="font-size:17px; color:var(--naranja-highlight); padding-right:15px;"></span>Wi-Fi</h4></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<footer></footer>
+
+<script>
+	document.getElementById("boton-menu").addEventListener("load", menu());
+	function menu() {
+		if (window.matchMedia("(min-width: 768px)").matches) {
+			document.getElementById("boton-menu").removeAttribute("data-toggle");
+			document.getElementById("boton-menu").setAttribute("href", "C:/web design/Chisa Sushi/menu/menu.html");
+		}
+	}
+</script>
+<script src="./js/contacto.js"></script>
+<script src="C:/web design/Chisa Sushi/js/jquery-1.11.3.min.js"></script>
+<script src="C:/web design/Chisa Sushi/js/bootstrap.js"></script>
+</body>
+</html>

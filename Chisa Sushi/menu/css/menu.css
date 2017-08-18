@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+.menu-titulo {
+    color: var(--naranja-highlight);
+    margin: 115px 0 30px;
+    font-size: 27px;
+    text-align: center;
+    line-height: 1;
+}
+
+.container-fluid {
+  margin-top: 50px;
+}
+
+.container-fluid > .content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sub-header {
+  margin-top: 88px;
+  display: block;
+  position: relative;
+  top: -2px;
+  margin-bottom: -2px;
+}
+
+.sub-nav {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sub-nav > .item {
+  display: inline-block;
+}
+
+.sub-nav > li > a {
+  color: #444242;
+  padding: 13px 4px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sub-nav > li > a.active {
+  background: var(--naranja-highlight);
+  color: #FFF;
+}
+.categoria-comida {
+  cursor: pointer;
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.categoria-comida > .inner {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 10% 5%;
+}
+
+.categoria-comida  .imgComida {
+  height: 193px;
+}
+
+.categoria-comida img {
+  max-height: 100%;
+  max-width: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.categoria-comida .titulo {
+  color: var(--naranja-highlight);
+  display: table;
+  width: 100%;
+  font-size: 5vw;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.categoria-comida .titulo > span {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.gutter-image {
+    display: none;
+    background: transparent none no-repeat;
+    background-size: contain;
+    height: 639px;
+    width: 700px;
+    position: absolute;
+}
+.left-image {
+  background-position: right;
+  right: 100%;
+}
+.right-image {
+  background-position: left;
+  top: 400px;
+  left: 100%;
+}
+
+@media (max-width: 767px) {
+  .categoria-comida:nth-of-type(odd){
+    clear: both;
+  }
+}
+
+@media (min-width: 768px) {
+  .categoria-comida .titulo {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sub-header {
+      margin-top: 99px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .gutter-image {
+    display: block;
+  }
+  .left-image {
+    right: 90%;
+  }
+  .right-image {
+    left: 90%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .left-image {
+    right: 85%;
+  }
+  .right-image {
+    left: 85%;
+  }
+}
