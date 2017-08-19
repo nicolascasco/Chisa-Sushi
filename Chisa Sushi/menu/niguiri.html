@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="C:/web design/Chisa Sushi/css/styles.css">
 	<link rel="stylesheet" href="C:/web design/Chisa Sushi/css/navbar.css">
 	<link rel="stylesheet" href="./css/menu.css">
+	<link rel="stylesheet" href="./css/item-info.css">
 	<!--icons-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -35,17 +36,17 @@
 								<div class="contenedor-desp">
 									<div class="row">
 										<ul class="list-unstyled col-xs-6 col-md-6">
-											<li><a href="C:/web design/Chisa Sushi/menu/rolls.html"><h4>Rolls</h3></a></li><li class="divider"></li>
-											<li><a href="C:/web design/Chisa Sushi/menu/niguiri.html"><h4>Niguiri</h3></a></li><li class="divider"></li>
-											<li><a href="C:/web design/Chisa Sushi/menu/wok.html"><h4>Wok</h3></a></li><li class="divider"></li>
-											<li><a href="C:/web design/Chisa Sushi/menu/finger-food.html"><h4>Finger Food</h3></a></li><li class="divider"></li>
-											<li><a href="C:/web design/Chisa Sushi/menu/menu.html"><h4>Menu Completo</h3></a></li>
+											<li><a href="rolls.html"><h4>Rolls</h3></a></li><li class="divider"></li>
+											<li><a href="niguiri.html"><h4>Niguiri</h3></a></li><li class="divider"></li>
+											<li><a href="wok.html"><h4>Wok</h3></a></li><li class="divider"></li>
+											<li><a href="finger-food.html"><h4>Finger Food</h3></a></li><li class="divider"></li>
+											<li><a href="menu.html"><h4>Menu Completo</h3></a></li>
 										</ul>
 										<ul class="list-unstyled col-xs-6 col-md-6">
-											<li><a href="C:/web design/Chisa Sushi/menu/temaki.html"><h4>Temaki</h4></a></li><li class="divider"></li>
-											<li><a href="C:/web design/Chisa Sushi/menu/sashimi.html"><h4>Sashimi</h4></a></li><li class="divider"></li>
-											<li><a href="C:/web design/Chisa Sushi/menu/chow-fan.html"><h4>Chow Fan</h4></a></li><li class="divider"></li>
-											<li><a href="C:/web design/Chisa Sushi/menu/postres.html"><h4>Postres</h4></a></li><li class="divider"></li>
+											<li><a href="temaki.html"><h4>Temaki</h4></a></li><li class="divider"></li>
+											<li><a href="sashimi.html"><h4>Sashimi</h4></a></li><li class="divider"></li>
+											<li><a href="chow-fan.html"><h4>Chow Fan</h4></a></li><li class="divider"></li>
+											<li><a href="postres.html"><h4>Postres</h4></a></li><li class="divider"></li>
 										</ul>
 									</div>
 								</div>
@@ -53,7 +54,7 @@
 						</ul>
 					</li>
 					<li><a href="#"><h1>Combos</h1></a></li>
-					<li><a href="C:/web design/Chisa Sushi/contacto/contacto.html"><h1>Contacto</h1></a></li>
+					<li><a href="../contacto/contacto.html"><h1>Contacto</h1></a></li>
 					<li><a href="#"><h1>catering</h1></a></li>
 				</ul>
 			</div>
@@ -64,17 +65,7 @@
 	<!--Gutter images Start-->
 	<div class="gutter-image left-image" style="background-image:url('');"></div>
 	<div class="gutter-image right-image" style="background-image:url('');"></div>
-	<!--Gutter images End-->
-	<!--
-	<div class="row content">
-		<div class="col-xs-6 col-sm-4 categoria-comida">
-			<a class="inner" href="#">
-				<div class="imgComida"><img src="" alt=""></div>
-				<div class="titulo"><span></span></div>
-			</a>
-		</div>
-	</div>
-	-->
+
 	<header class="hidden-xs container-fluid sub-header">
 		<div class="content">
 				<ul class="sub-nav">
@@ -92,52 +83,58 @@
 
 	<section class="container-fluid">
 		<div class="row content">
-			<div class="col-xs-6 col-sm-4 categoria-comida">
-				<a class="inner" href="maki-roll.html">
+			<div onclick="HandleProductInfo(209, Row1)" class="col-xs-6 col-sm-4 categoria-comida">
+				<a class="inner">
 					<div class="imgComida"><img src="https://drive.google.com/uc?id=0ByqAu_RqicLOREhveDA5THpuRVU" alt=""></div>
-					<div class="titulo"><span>Salmon Fresco	</span></div>
+					<div class="titulo"><span>Salmon Fresco</span></div>
 				</a>
 			</div>
-			<div class="col-xs-6 col-sm-4 categoria-comida">
-				<a class="inner" href="classic-roll.html">
+			<div onclick="HandleProductInfo(210, Row1)" class="col-xs-6 col-sm-4 categoria-comida">
+				<a class="inner">
 					<div class="imgComida"><img src="https://drive.google.com/uc?id=0ByqAu_RqicLOREhveDA5THpuRVU" alt=""></div>
 					<div class="titulo"><span>Salmon Ahumado</span></div>
 				</a>
 			</div>
-			<div class="col-xs-6 col-sm-4 categoria-comida">
-				<a class="inner" href="special-roll.html">
+			<div onclick="HandleProductInfo(211, Row1)" class="col-xs-6 col-sm-4 categoria-comida">
+				<a class="inner">
 					<div class="imgComida"><img src="https://drive.google.com/uc?id=0ByqAu_RqicLOREhveDA5THpuRVU" alt=""></div>
 					<div class="titulo"><span>Kanikama</span></div>
 				</a>
 			</div>
-			<div class="col-xs-6 col-sm-4 categoria-comida">
-				<a class="inner" href="special-roll.html">
+			<section id="Row1" class="hidden-xs col-sm-12 placeHolder"></section>
+			<div onclick="HandleProductInfo(212, Row2)" class="col-xs-6 col-sm-4 categoria-comida">
+				<a class="inner">
 					<div class="imgComida"><img src="https://drive.google.com/uc?id=0ByqAu_RqicLOREhveDA5THpuRVU" alt=""></div>
-					<div class="titulo"><span>Langostino</span></div>
+					<div class="titulo"><span>Langostinos</span></div>
 				</a>
 			</div>
-			<div class="col-xs-6 col-sm-4 categoria-comida">
-				<a class="inner" href="atsui-chisa.html">
+			<div onclick="HandleProductInfo(213, Row2)" class="col-xs-6 col-sm-4 categoria-comida">
+				<a class="inner">
 					<div class="imgComida"><img src="https://drive.google.com/uc?id=0ByqAu_RqicLOREhveDA5THpuRVU" alt=""></div>
 					<div class="titulo"><span>Blanco</span></div>
 				</a>
 			</div>
-			</div>
+			<section id="Row2" class="hidden-xs col-sm-12 placeHolder"></section>
 		</div>
+		<!-- Modal -->
+		<div class="modal fade" id="modalPlaceholder" role="dialog"></div>
 	</section>
-
 <footer></footer>
 
+<script src="../js/jquery-1.11.3.min.js"></script>
+<script src="js/menu-items.json"></script>
+<script src="js/menu.js"></script>
 <script>
+	paginaStartUP();
 	document.getElementById("boton-menu").addEventListener("load", menu());
 	function menu() {
 		if (window.matchMedia("(min-width: 768px)").matches) {
 			document.getElementById("boton-menu").removeAttribute("data-toggle");
-			document.getElementById("boton-menu").setAttribute("href", "C:/web design/Chisa Sushi/menu/menu.html");
+			document.getElementById("boton-menu").setAttribute("href", "menu.html");
 		}
 	}
 </script>
-<script src="C:/web design/Chisa Sushi/js/jquery-1.11.3.min.js"></script>
-<script src="C:/web design/Chisa Sushi/js/bootstrap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
+<script src="../js/bootstrap.js"></script>
 </body>
 </html>

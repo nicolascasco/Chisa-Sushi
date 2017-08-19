@@ -7,6 +7,8 @@ function paginaStartUP() {
 
 var infoTemplate = "<div id='descripcion' class='item-info'><div class='wrapper'><div class='container-fluid product-hero'><div class='row content clearfix'><a class='cerrar' onclick='exterminate()'><i class='fa fa-times-circle fa-4x' aria-hidden='true'></i></a><hgroup class='col-sm-6 text-left title-group'><h1 class='title'>{{nombre}}</h1><h2 class='subtitle'></h2></hgroup><div class='image col-sm-6 text-right'><img src='{{img}}' alt=''></div><div class='col-sm-6 description'>{{des}}</div></div></div></div></div>";
 
+var modalInfoTemplate = "<div id='modalContent' class='modal-dialog modal-sm'><div class='modal-content'><div class='modal-body'><div class='modal-product-hero' ><a onclick='ocultarModal()' class='fa fa-times-circle fa-4x' aria-hidden='true' style=''></a><hgroup class='col-sm-12 title-group'><h1 class='title'>{{nombre}}</h1><h2 class='subtitle'></h2></hgroup><div class='col-sm-12 description'>{{des}}</div><div class='image col-sm-12 text-right'><img src='{{img}}' alt=''></div></div></div></div></div>";
+
 function HandleProductInfo(id, target) {
 	if (screen.width < 768) {
 		mostrarModal(id)
@@ -17,13 +19,20 @@ function HandleProductInfo(id, target) {
 
 function ocultarModal(id) {
 	$(function() {
-		$("#myModal").modal('hide');
+		$("#modalPlaceholder").modal('hide');
 	});
+	document.getElementById("modalContent").remove();
 }
 
 function mostrarModal(id) {
+	var selec = producto[id];
+	if (selec != null) {
+		Mustache.parse(modalInfoTemplate);
+		var rendered = Mustache.render(modalInfoTemplate, selec);
+		document.getElementById("modalPlaceholder").innerHTML = rendered;
+	}
 	$(function() {
-		$("#myModal").modal();
+		$("#modalPlaceholder").modal();
 	});
 }
 
