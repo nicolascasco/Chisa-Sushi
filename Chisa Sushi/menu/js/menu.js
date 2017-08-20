@@ -1,63 +1,62 @@
 var producto;
 var lastLog;
-var urlProductId;
-var urlProductPlaceholder;
 
 function paginaStartUP() {
 	producto = JSON.parse(info);
 }
 
+var urlProductId;
+var urlProductPlaceholder;
 window.onload = function() {
-	urlProductId = getURLParameter('producto');
-	urlProductPlaceholder = getURLParameter('r');
+	getURLParameter();
+	console.log(urlProductId);
+	console.log(urlProductPlaceholder);
 	if (urlProductId && urlProductPlaceholder) {
 		var row = document.getElementById("Row" + urlProductPlaceholder);
 		HandleProductInfo(urlProductId, row);
 	}
 }
 // url param start //
-function getURLParameter(param) {
+function getURLParameter() {
 	var urlSearchString = window.location.search.substring(1);
-	var urlVariables = urlSearchString.split('&');
-
-	for (var i = 0; i < urlVariables.length; i++) {
-		var parameterName = urlVariables[i].split('=');
-		if (parameterName[0] == param) {
-			return decodeURIComponent(parameterName[1]);
-		}
-	}
+	var urlVariables = urlSearchString.split('r');
+	urlProductId = urlVariables[0];
+	urlProductPlaceholder = urlVariables[1];
 }
 //url param end //
 
-var infoTemplate = "<div id='descripcion' class='item-info'><div class='wrapper'><div class='container-fluid product-hero'><div class='row content clearfix'><a class='cerrar' onclick='exterminate()'><i class='fa fa-times-circle fa-4x' aria-hidden='true'></i></a><hgroup class='col-sm-6 text-left title-group'><h1 class='title'>{{nombre}}</h1><h2 class='subtitle'></h2></hgroup><div class='image col-sm-6 text-right'><img src='{{img}}' alt=''></div><div class='col-sm-6 description'>{{des}}</div></div></div></div></div>";
+var infoTemplate = "<div id='descripcion' class='item-info'><div class='wrapper'><div class='container-fluid product-hero'><div class='row content clearfix'><a class='cerrar' onclick='exterminate()'><i class='fa fa-times-circle fa-4x' aria-hidden='true'></i></a><hgroup class='col-sm-6 text-left title-group'><h1 class='title'>{{nombre}}</h1><h2 class='subtitle'></h2></hgroup><div class='image col-sm-6 text-right'><img src='{{img}}' alt=''></div><div class='col-sm-6 description'>{{des}}</div><div clas='col-sm-6' style='text-align: center;'><iframe src='https://www.facebook.com/plugins/share_button.php?href={{url}}{{id}}r{{r}}&layout=button_count&size=large&mobile_iframe=true&width=110&height=28&appId' width='110' height='28' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowTransparency='true'></iframe></div></div></div></div></div>";
+//var infoTemplate = "<iframe src='https://www.facebook.com/plugins/share_button.php?href={{url}}&layout=button_count&size=large&mobile_iframe=true&width=110&height=28&appId' width='110' height='28' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowTransparency='true'></iframe>";
+var modalInfoTemplate = "<div id='modalContent' class='modal-dialog modal-sm'><div class='modal-content'><div class='modal-body'><div class='modal-product-hero' ><a onclick='ocultarModal()' class='fa fa-times-circle fa-4x' aria-hidden='true' style=''></a><hgroup class='col-sm-12 title-group'><h1 class='title'>{{nombre}}</h1><h2 class='subtitle'></h2></hgroup><div class='col-sm-12 description'>{{des}}</div><div class='image col-sm-12 text-right'><img src='{{img}}' alt=''></div><div clas='col-xs-12' style='text-align: center;'><iframe src='https://www.facebook.com/plugins/share_button.php?href={{url}}{{id}}r{{r}}&layout=button_count&size=large&mobile_iframe=true&width=110&height=28&appId' width='110' height='28' style='border:none;overflow:hidden' scrolling='no' frameborder='0' allowTransparency='true'></iframe></div></div></div></div></div>";
 
-var modalInfoTemplate = "<div id='modalContent' class='modal-dialog modal-sm'><div class='modal-content'><div class='modal-body'><div class='modal-product-hero' ><a onclick='ocultarModal()' class='fa fa-times-circle fa-4x' aria-hidden='true' style=''></a><hgroup class='col-sm-12 title-group'><h1 class='title'>{{nombre}}</h1><h2 class='subtitle'></h2></hgroup><div class='col-sm-12 description'>{{des}}</div><div class='image col-sm-12 text-right'><img src='{{img}}' alt=''></div></div></div></div></div>";
-
+var completo;
 function HandleProductInfo(id, target) {
-	if (screen.width < 768) {
-		mostrarModal(id)
-	} else {
-		mostrarDesktop(id, target);
+	var selec = producto[id];
+	if (selec) {
+		completo = {"nombre":selec["nombre"], "des":selec["des"], "img":selec["img"], "url":window.location.href.split('?')[0], "r":target.id.substring(3), "id":id, "target":target} ;
+		completo["url"] = "https://nicolascasco.github.io/Chisa-Sushi/Chisa%20Sushi/menu/maki-roll.html?";
+		if (screen.width < 768) {
+			mostrarModal()
+		} else {
+			mostrarDesktop();
+		}
 	}
 }
 
-function ocultarModal(id) {
+function mostrarModal() {
+	Mustache.parse(modalInfoTemplate);
+	var rendered = Mustache.render(modalInfoTemplate, completo);
+	document.getElementById("modalPlaceholder").innerHTML = rendered;
+	$(function() {
+		$("#modalPlaceholder").modal();
+	});
+}
+
+function ocultarModal() {
 	$(function() {
 		$("#modalPlaceholder").modal('hide');
 	});
 	document.getElementById("modalContent").remove();
-}
-
-function mostrarModal(id) {
-	var selec = producto[id];
-	if (selec != null) {
-		Mustache.parse(modalInfoTemplate);
-		var rendered = Mustache.render(modalInfoTemplate, selec);
-		document.getElementById("modalPlaceholder").innerHTML = rendered;
-	}
-	$(function() {
-		$("#modalPlaceholder").modal();
-	});
 }
 
 function exterminate() {
@@ -78,43 +77,39 @@ function exterminate() {
 
 
 var lastRecivedId = null;
-
-function mostrarDesktop(id, target) {
-	var selec = producto[id];
-	if (id == lastRecivedId) {
+function mostrarDesktop() {
+	if (completo["id"] == lastRecivedId) {
 		exterminate();
 	} else {
 			if (document.getElementById("descripcion")) {
-				cerrarActaulAbrirNuevo(id, target);
+				cerrarActaulAbrirNuevo();
 			} else {
-				mostrar(id, target);
+				mostrar();
 			}
 	}
 }
 
-function mostrar(id, target) {
-	var selec = producto[id];
-	if (selec != null) {
-		Mustache.parse(infoTemplate);
-		var rendered = Mustache.render(infoTemplate, selec);
-		document.getElementById(target.id).setAttribute("style", "height: 600px");
-		scrollTo(target);
-		target.innerHTML = rendered;
-		setTimeout(function() {
-			var openProductInfo = document.getElementById("descripcion");
-			openProductInfo.setAttribute("style", "height:600px;")
-		}, 0);
-		lastRecivedId = id;
-	}
+function mostrar() {
+	Mustache.parse(infoTemplate);
+	var rendered = Mustache.render(infoTemplate, completo);
+	var target = completo["target"];
+	document.getElementById(target.id).setAttribute("style", "height: 600px");
+	scrollTo(target.id);
+	target.innerHTML = rendered;
+	setTimeout(function() {
+		var openProductInfo = document.getElementById("descripcion");
+		openProductInfo.setAttribute("style", "height:600px;")
+	}, 0);
+	lastRecivedId = completo["id"];
 }
 
-function cerrarActaulAbrirNuevo(id, target) {
-	setTimeout(function() {mostrar(id, target);},600);
+function cerrarActaulAbrirNuevo() {
+	setTimeout(function() {mostrar();},600);
 	exterminate();
 }
 
-function scrollTo(target) {
-	var cpch = document.getElementById(target.id);
+function scrollTo(targetID) {
+	var cpch = document.getElementById(targetID);
 	cpch.scrollIntoView(true);
 	window.scrollBy(0,-80);
 }
