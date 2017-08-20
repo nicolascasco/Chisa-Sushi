@@ -1,9 +1,33 @@
 var producto;
 var lastLog;
+var urlProductId;
+var urlProductPlaceholder;
 
 function paginaStartUP() {
 	producto = JSON.parse(info);
 }
+
+window.onload = function() {
+	urlProductId = getURLParameter('producto');
+	urlProductPlaceholder = getURLParameter('r');
+	if (urlProductId && urlProductPlaceholder) {
+		var row = document.getElementById("Row" + urlProductPlaceholder);
+		HandleProductInfo(urlProductId, row);
+	}
+}
+// url param start //
+function getURLParameter(param) {
+	var urlSearchString = window.location.search.substring(1);
+	var urlVariables = urlSearchString.split('&');
+
+	for (var i = 0; i < urlVariables.length; i++) {
+		var parameterName = urlVariables[i].split('=');
+		if (parameterName[0] == param) {
+			return decodeURIComponent(parameterName[1]);
+		}
+	}
+}
+//url param end //
 
 var infoTemplate = "<div id='descripcion' class='item-info'><div class='wrapper'><div class='container-fluid product-hero'><div class='row content clearfix'><a class='cerrar' onclick='exterminate()'><i class='fa fa-times-circle fa-4x' aria-hidden='true'></i></a><hgroup class='col-sm-6 text-left title-group'><h1 class='title'>{{nombre}}</h1><h2 class='subtitle'></h2></hgroup><div class='image col-sm-6 text-right'><img src='{{img}}' alt=''></div><div class='col-sm-6 description'>{{des}}</div></div></div></div></div>";
 
