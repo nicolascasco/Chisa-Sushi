@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="../css/styles.css">
 	<link rel="stylesheet" href="../css/navbar.css">
 	<link rel="stylesheet" href="./css/menu.css">
+	<link rel="stylesheet" href="./css/item-info.css">
 	<!--icons-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -62,7 +63,7 @@
 	</header>
 
 	<!--Gutter images Start-->
-	<div class="gutter-image left-image" style="background-image:url('images/AdobeStock_16664289-1.jpeg');"></div>
+	<div class="gutter-image left-image" style="background-image:url('');"></div>
 	<div class="gutter-image right-image" style="background-image:url('');"></div>
 	<!--Gutter images End-->
 	<!--
@@ -92,46 +93,53 @@
 
 	<section class="container-fluid">
 		<div class="row content">
-			<div class="col-xs-6 col-sm-4 categoria-comida">
+			<div onclick="HandleProductInfo(233, Row1)" class="col-xs-6 col-sm-4 categoria-comida">
 				<a class="inner">
-					<div class="imgComida"><img src="https://drive.google.com/uc?id=0ByqAu_RqicLOWDROMmZtanZjQUk" alt=""></div>
+					<div class="imgComida"><img src="https://drive.google.com/uc?id=0ByqAu_RqicLOREhveDA5THpuRVU" alt=""></div>
 					<div class="titulo"><span>Kanikama</span></div>
 				</a>
 			</div>
-			<div class="col-xs-6 col-sm-4 categoria-comida">
+			<div onclick="HandleProductInfo(234, Row1)" class="col-xs-6 col-sm-4 categoria-comida">
 				<a class="inner">
-					<div class="imgComida"><img src="https://drive.google.com/uc?id=0ByqAu_RqicLOWDROMmZtanZjQUk" alt=""></div>
-					<div class="titulo"><span>Langostinos</span></div>
+					<div class="imgComida"><img src="https://drive.google.com/uc?id=0ByqAu_RqicLOREhveDA5THpuRVU" alt=""></div>
+					<div class="titulo"><span>Langostino</span></div>
 				</a>
 			</div>
-			<div class="col-xs-6 col-sm-4 categoria-comida">
+			<div onclick="HandleProductInfo(235, Row1)" class="col-xs-6 col-sm-4 categoria-comida">
 				<a class="inner">
-					<div class="imgComida"><img src="https://drive.google.com/uc?id=0ByqAu_RqicLOWDROMmZtanZjQUk" alt=""></div>
+					<div class="imgComida"><img src="https://drive.google.com/uc?id=0ByqAu_RqicLOREhveDA5THpuRVU" alt=""></div>
 					<div class="titulo"><span>Salmon Fresco</span></div>
 				</a>
 			</div>
-			<div class="col-xs-6 col-sm-4 col-sm-offset-4 categoria-comida">
+			<section id="Row1" class="hidden-xs col-sm-12 placeHolder"></section>
+			<div onclick="HandleProductInfo(236, Row2)" class="col-xs-6 col-sm-4 col-sm-offset-4 categoria-comida">
 				<a class="inner">
-					<div class="imgComida"><img src="https://drive.google.com/uc?id=0ByqAu_RqicLOWDROMmZtanZjQUk" alt=""></div>
+					<div class="imgComida"><img src="https://drive.google.com/uc?id=0ByqAu_RqicLOREhveDA5THpuRVU" alt=""></div>
 					<div class="titulo"><span>Salmon Ahumado</span></div>
 				</a>
 			</div>
+			<section id="Row2" class="hidden-xs col-sm-12 placeHolder"></section>
 			</div>
 		</div>
+		<!-- Modal -->
+		<div class="modal fade" id="modalPlaceholder" role="dialog"></div>
 	</section>
-
 <footer></footer>
 
+<script src="../js/jquery-1.11.3.min.js"></script>
+<script src="js/menu-items.json"></script>
+<script src="js/menu.js"></script>
 <script>
+	paginaStartUP();
 	document.getElementById("boton-menu").addEventListener("load", menu());
 	function menu() {
 		if (window.matchMedia("(min-width: 768px)").matches) {
 			document.getElementById("boton-menu").removeAttribute("data-toggle");
-			document.getElementById("boton-menu").setAttribute("href", "C:/web design/Chisa Sushi/menu/menu.html");
+			document.getElementById("boton-menu").setAttribute("href", "menu.html");
 		}
 	}
 </script>
-<script src="../js/jquery-1.11.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
 <script src="../js/bootstrap.js"></script>
 </body>
 </html>
