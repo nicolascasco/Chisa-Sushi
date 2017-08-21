@@ -95,6 +95,7 @@
 }
 
 .product-hero .description {
+    text-align: center;
     font-size: 16px;
     margin-top: 20px;
     margin-bottom: 90px;
@@ -146,7 +147,7 @@
 }
 
   .modal-product-hero .title-group {
-    padding-top: 50px;
+    padding-top: 20px;
     margin-bottom: 0;
 }
 
@@ -159,9 +160,10 @@
 }
 
 .modal-product-hero .description {
-    font-size: 16px;
-    margin-top: 20px;
-    /*margin-bottom: 90px;*/
+  text-align: center;
+  font-size: 16px;
+  margin-top: 20px;
+  /*margin-bottom: 90px;*/
 }
 
 .modal-product-hero .image img{
