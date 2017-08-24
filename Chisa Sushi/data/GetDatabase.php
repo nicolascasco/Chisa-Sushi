@@ -13,9 +13,9 @@ $_POST['method']();
     $db = mysql_select_db("chisa",$conn);
     mysql_query("SET NAMES 'utf8'");
 
-    $query = "SELECT * from menu WHERE id = '400' OR id='401'";
+    $query = "SELECT * from menu WHERE id = '194' OR id = '195'";
     $result = mysql_query($query) or die(mysql_error());
-    while ($row = mysql_fetch_array($result)) {
+    while ($row = mysql_fetch_row($result)) {
       $id = $row[0];
       $nombre = $row[1];
       $des = $row[2];
@@ -35,6 +35,8 @@ $_POST['method']();
     //$return->errorMessage = "";
     //$return->$id['database_names'] = $databaseNames;
     $json = json_encode($databaseNames);
+    //$json = json_encode($return);
+
     echo $json;
   }
  ?>
